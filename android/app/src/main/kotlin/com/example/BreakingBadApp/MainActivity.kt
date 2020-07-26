@@ -1,0 +1,6 @@
+package com.example.BreakingBadApp
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
