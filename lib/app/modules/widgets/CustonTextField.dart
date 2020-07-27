@@ -24,6 +24,7 @@ class CustonTextField extends StatelessWidget {
               color: Colors.green,
               icon: Icon(Icons.search),
               onPressed: () {
+                // ignore: unnecessary_statements
                 func;
               },
             ),
