@@ -12,13 +12,13 @@ mixin _$EpisodesController on _EpisodesControllerBase, Store {
   final _$episodesAtom = Atom(name: '_EpisodesControllerBase.episodes');
 
   @override
-  List<EspisodesModel> get episodes {
+  List<EpisodesModel> get episodes {
     _$episodesAtom.reportRead();
     return super.episodes;
   }
 
   @override
-  set episodes(List<EspisodesModel> value) {
+  set episodes(List<EpisodesModel> value) {
     _$episodesAtom.reportWrite(value, super.episodes, () {
       super.episodes = value;
     });

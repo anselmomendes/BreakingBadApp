@@ -7,12 +7,12 @@ class EpisodesRepository implements IEpisodesRepository {
 
   EpisodesRepository(this.dio);
 
-  Future<List<EspisodesModel>> getListData() async {
+  Future<List<EpisodesModel>> getListData() async {
     final response = await dio.get("https://breakingbadapi.com/api/episodes");
     return response.data
-        .map((data) => EspisodesModel.fromMap(data))
+        .map((data) => EpisodesModel.fromMap(data))
         .toList()
-        .cast<EspisodesModel>();
+        .cast<EpisodesModel>();
   }
 
   //dispose will be called automatically

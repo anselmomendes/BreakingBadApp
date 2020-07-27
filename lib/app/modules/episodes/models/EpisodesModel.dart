@@ -2,13 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
-class EspisodesModel {
+class EpisodesModel {
   final String title;
   final String season;
   final String air_date;
   final List<String> characters;
   final String episode;
-  EspisodesModel({
+  EpisodesModel({
     this.title,
     this.season,
     this.air_date,
@@ -16,14 +16,14 @@ class EspisodesModel {
     this.episode,
   });
 
-  EspisodesModel copyWith({
+  EpisodesModel copyWith({
     String title,
     String season,
     String air_date,
     List<String> characters,
     String episode,
   }) {
-    return EspisodesModel(
+    return EpisodesModel(
       title: title ?? this.title,
       season: season ?? this.season,
       air_date: air_date ?? this.air_date,
@@ -42,10 +42,10 @@ class EspisodesModel {
     };
   }
 
-  static EspisodesModel fromMap(Map<String, dynamic> map) {
+  static EpisodesModel fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
-    return EspisodesModel(
+    return EpisodesModel(
       title: map['title'],
       season: map['season'],
       air_date: map['air_date'],
@@ -56,7 +56,7 @@ class EspisodesModel {
 
   String toJson() => json.encode(toMap());
 
-  static EspisodesModel fromJson(String source) => fromMap(json.decode(source));
+  static EpisodesModel fromJson(String source) => fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -67,7 +67,7 @@ class EspisodesModel {
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
 
-    return o is EspisodesModel &&
+    return o is EpisodesModel &&
         o.title == title &&
         o.season == season &&
         o.air_date == air_date &&

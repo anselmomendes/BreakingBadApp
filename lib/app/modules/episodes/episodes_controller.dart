@@ -14,7 +14,7 @@ abstract class _EpisodesControllerBase with Store {
   }
 
   @observable
-  List<EspisodesModel> episodes = [];
+  List<EpisodesModel> episodes = [];
 
   @action
   get() async {
