@@ -24,6 +24,21 @@ mixin _$QuotesController on _QuotesControllerBase, Store {
     });
   }
 
+  final _$textAtom = Atom(name: '_QuotesControllerBase.text');
+
+  @override
+  TextEditingController get text {
+    _$textAtom.reportRead();
+    return super.text;
+  }
+
+  @override
+  set text(TextEditingController value) {
+    _$textAtom.reportWrite(value, super.text, () {
+      super.text = value;
+    });
+  }
+
   final _$getAsyncAction = AsyncAction('_QuotesControllerBase.get');
 
   @override
@@ -31,10 +46,18 @@ mixin _$QuotesController on _QuotesControllerBase, Store {
     return _$getAsyncAction.run(() => super.get());
   }
 
+  final _$getSeachAsyncAction = AsyncAction('_QuotesControllerBase.getSeach');
+
+  @override
+  Future getSeach() {
+    return _$getSeachAsyncAction.run(() => super.getSeach());
+  }
+
   @override
   String toString() {
     return '''
-quotes: ${quotes}
+quotes: ${quotes},
+text: ${text}
     ''';
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
 import 'Models/QuotesModel.dart';
@@ -13,6 +14,9 @@ abstract class _QuotesControllerBase with Store {
   @observable
   List<QuotesModel> quotes;
 
+  @observable
+  TextEditingController text = TextEditingController();
+
   _QuotesControllerBase(this.quotesRepository) {
     get();
   }
@@ -20,5 +24,10 @@ abstract class _QuotesControllerBase with Store {
   @action
   get() async {
     quotes = await quotesRepository.getListData();
+  }
+
+  @action
+  getSeach() async {
+    //quotes = await quotesRepository.getListSeach(text.text);
   }
 }

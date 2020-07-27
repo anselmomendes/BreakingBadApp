@@ -4,4 +4,5 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 abstract class IQuotesRepository implements Disposable {
   Future<List<QuotesModel>> getListData();
+  Future<List<QuotesModel>> getListSeach(String quote);
 }

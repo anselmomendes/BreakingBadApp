@@ -58,11 +58,13 @@ class _CharactersPageState
                           );
 
                         List<CharacteresModel> list = controller.characters;
+                        print('############aaa');
                         if (list.isEmpty)
                           return ListEmpty(
-                              height: screenHeight,
-                              width: screenWidth,
-                              func: controller.getSeach());
+                            height: screenHeight,
+                            width: screenWidth,
+                            func: controller.getSeach(),
+                          );
                         return Container(
                           width: screenWidth - 60,
                           height: screenHeight * 0.7,
